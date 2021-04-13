@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=“UTF-8”>
+    <title>Transform</title>
+    <style>
+        div {
+            animation-name: Color;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 40%;
+            top: 20%;
+        }
+    
+        @keyframes Color {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                background-color: red;
+            }
+    
+            50% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+                background-color: green;
+            }
+    
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div></div>
+</body>
+
+</html>

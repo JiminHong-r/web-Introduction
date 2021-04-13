@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>회원 가입</title>
+	<style>
+		#form {
+			position: absolute;
+			left: 20%;
+			top: 10%;
+		}
+
+		body {
+			background-color: lightgray;
+
+		}
+
+		form {
+			align-items: center;
+			justify-content: center;
+			border-style: solid;
+			background-color: white;
+			width: 600px;
+			height: 300px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		fieldset {
+			align-items: center;
+			justify-content: center;
+			width: 500px;
+			height: 200px;
+		}
+
+		input[type=text]:focus,
+		input[type=email]:focus,
+		input[type=password]:focus {
+			background-color: lightgray;
+		}
+
+		input[type=submit] {
+			height: 40px;
+			width: 100px;
+			border-radius: 20px;
+		}
+
+		input[type=submit]:hover {
+			color: white;
+			background-color: black;
+		}
+
+		label {
+			display: block;
+			padding: 5px;
+		}
+
+		label span {
+			display: inline-block;
+			width: 90px;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="form">
+		<form>
+			<fieldset>
+				<legend>Login</legend>
+				<ul>
+					<li><label>
+							<span>ID</span><input type="text">
+						</label></li>
+					<li><label>
+							<span>e-mail</span><input type="email" placeholder="abcd@domain.com">
+						</label></li>
+					<li><label>
+							<span>password</span><input type="password"></input>
+						</label></li>
+				</ul>
+			</fieldset>
+			<label>
+				<input type="submit" value="submit">
+			</label>
+		</form>
+	</div>
+</body>
+
+</html>
