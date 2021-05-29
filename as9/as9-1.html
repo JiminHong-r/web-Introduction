@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=“UTF-8”>
+    <title>onmouseover과 onmouseout</title>
+    <script>
+        var box = ["웹 문서의 뼈대 작성",
+            "웹 문서를 꾸미는 역할",
+            "사용자 동작에 반응",
+        ];
+        var divtag;
+
+        function init() {
+            divtag = document.getElementById("divtag");
+            var liArray = document.getElementsByTagName("li");
+            for (var i = 0; i < liArray.length; i++) {
+                liArray[i].onmouseover = over;
+                liArray[i].onmouseout = hidden;
+            }
+        }
+
+        function over(e) {
+            var n = 0;
+            switch (e.target.id) {
+                case "0": n = 0;
+                    break;
+                case "1": n = 1;
+                    break;
+                case "2": n = 2;
+                    break;
+            }
+            setBox(box[n], e);
+        }
+
+        function setBox(box, e) {
+            divtag.innerHTML = box;
+            divtag.style.visibility = "visible";
+            divtag.style.left = e.clientX + "px";
+            divtag.style.top = e.clientY + "px";
+            divtag.style.width = "200px";
+            divtag.style.height = "40px";
+            divtag.style.border = "1px solid yellowgreen";
+            divtag.style.backgroundColor = "aliceblue";
+        }
+
+        function hidden() {
+            divtag.style.visibility = "hidden";
+        }
+    </script>
+
+</head>
+
+<body onload="init()">
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+    <hr>
+    웹프로그래밍
+    <ul>
+        <li id="0">HTML</li>
+        <li id="1">CSS</li>
+        <li id="2">JavaScript</li>
+    </ul>
+    <div id="divtag" style="position:absolute"></div>
+</body>
+
+</html>
