@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=“UTF-8”>
+    <title>포털 사이트</title>
+    <script>
+        function openTab(frm) {
+            var select = frm.site.options.selectIndex;
+            if (select != 0) {
+                window.open(frm.site.options[frm.site.selectedIndex].value, "new", "_blank");
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="init()">
+    <h3>Select Option으로 포털 사이트 접속</h3>
+    <hr>
+    <form id="form">
+        <select id="site" onchange="openTab(this.form)">
+            <option value="http://www.google.com">Google</option>
+            <option value="http://www.naver.com">Naver</option>
+            <option value="http://www.daum.net">Daum</option>
+        </select>
+    </form>
+</body>
+
+</html>
